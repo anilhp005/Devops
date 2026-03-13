@@ -1,0 +1,23 @@
+pipeline{
+    // agent any
+    agent none
+
+    environment {
+        Docker_Name = 'anilhp'
+    }
+    stages{
+        stage('checkout'){
+            agent { label 'slave'}
+
+            steps {
+                echo 'this is checkout step'
+            }
+        }
+        stage ('test') {
+            steps{
+                echo 'stage to test'
+            }
+        }
+    }
+}
+
